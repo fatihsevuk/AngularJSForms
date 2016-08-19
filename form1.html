@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="">
+
+<h1>tüm sayfa için işaretle</h1>
+
+<input type="checkbox" ng-model="goster">
+
+<div ng-show="goster">
+
+
+<form>
+
+    First Name: <input type="text" ng-model="firstName" />
+    <br>
+    <h1>{{firstName}} yazdın</h1>
+
+</form>
+    <br>
+
+
+    <form>
+
+        <p>bir takım seç</p>
+
+        <select ng-model="takim">
+
+            <option value="">
+            <option value="FB">fenerbahçe
+            <option value="GS">galatasaray
+            <option value="BJK">beşiktaş
+            <option value="TS">trabzonspor
+
+        </select>
+
+
+
+    </form>
+
+    <div ng-switch="takim">
+
+        <div ng-switch-when="FB">
+            <h1>sarı lacivert</h1>
+            <p>1907</p>
+        </div>
+
+        <div ng-switch-when="GS">
+            <h1>sarı kırmızı</h1>
+            <p>1905</p>
+        </div>
+
+        <div ng-switch-when="BJK">
+            <h1>siyah beyaz</h1>
+            <p>1903</p>
+        </div>
+
+        <div ng-switch-when="TS">
+            <h1>bordo mavi</h1>
+            <p>1955</p>
+        </div>
+
+
+    </div>
+
+
+<form>
+
+    <h1>bir takım seç</h1>
+    <input type="radio" ng-model="takim1" value="FB">Fenerbahçe
+    <input type="radio" ng-model="takim1" value="GS">Galatasaray
+    <input type="radio" ng-model="takim1" value="BJK">Beşiktaş
+    <input type="radio" ng-model="takim1" value="TS">Trabzonspor
+
+
+
+</form>
+<div ng-switch="takim1">
+
+    <div ng-switch-when="FB">
+        <h1>sarı lacivert</h1>
+        <p>1907</p>
+    </div>
+
+    <div ng-switch-when="GS">
+        <h1>sarı kırmızı</h1>
+        <p>1905</p>
+    </div>
+
+    <div ng-switch-when="BJK">
+        <h1>siyah beyaz</h1>
+        <p>1903</p>
+    </div>
+
+    <div ng-switch-when="TS">
+        <h1>bordo mavi</h1>
+        <p>1955</p>
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>

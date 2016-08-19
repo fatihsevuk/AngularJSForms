@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    Adı:<input type="text" ng-model="user.ad"><br>
+    Soyadı:<input type="text" ng-model="user.soyad" ><br>
+    <button ng-click="temizle()">temizle</button>
+    <button ng-click="reset()">reset</button>
+    <button ng-click="kaydet()" >kaydet</button>
+
+    <div ng-show="kayit">
+
+        <h1>ADI:{{user.ad}}</h1>
+        <h1>SOYADI:{{user.soyad}}</h1>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+    
+    
+    var app=angular.module('myApp' , []);
+    app.controller('myCtrl' , function ($scope) {
+
+
+
+        $scope.default={ad:"fatih" , soyad:"sevük"};
+        $scope.reset=function () {
+            $scope.user=angular.copy($scope.default);
+
+        };
+        $scope.temizle=function () {
+            $scope.user={ad:"" , soyad:""}
+        };
+
+        $scope.kaydet=function () {
+            $scope.kayit=!$scope.kayit;
+        }
+
+        $scope.reset();
+
+
+
+
+    });
+    
+</script>
+
+
+
+
+</body>
+</html>
